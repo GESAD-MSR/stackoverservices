@@ -1,0 +1,330 @@
+{'finagle'}
+{'docker'}
+{'docker'}
+{'zookeeper'}
+{'eureka', 'zuul'}
+{'kubernetes'}
+{'mesos', 'docker', 'kubernetes'}
+{'kubernetes'}
+{'docker'}
+{'docker'}
+{'ec2'}
+{'docker'}
+{'docker', 'kong'}
+{'zookeeper', 'docker'}
+{'sqs'}
+{'zuul'}
+{'eureka'}
+{'rabbitmq', 'jhipster'}
+{'rabbitmq'}
+{'zuul'}
+{'docker'}
+{'eureka'}
+{'zookeeper'}
+{'docker'}
+{'sqs', 'rabbitmq'}
+{'rabbitmq'}
+{'rabbitmq'}
+{'docker', 'kubernetes'}
+{'lumen'}
+{'eureka'}
+{'docker'}
+{'rabbitmq'}
+{'rabbitmq'}
+{'zuul'}
+{'rabbitmq'}
+{'docker'}
+{'rabbitmq'}
+{'studio', 'docker'}
+{'docker'}
+{'etcd'}
+{'docker'}
+{'kubernetes'}
+{'docker'}
+{'eureka'}
+{'eureka'}
+{'eureka'}
+{'docker'}
+{'lumen'}
+{'zuul'}
+{'eureka'}
+{'docker'}
+{'zuul'}
+{'docker', 'jhipster'}
+{'docker'}
+{'kubernetes'}
+{'docker'}
+{'eureka'}
+{'docker'}
+{'zuul'}
+{'docker'}
+{'studio'}
+{'kubernetes'}
+{'lagom'}
+{'docker'}
+{'docker'}
+{'docker'}
+{'ecs'}
+{'docker'}
+{'kubernetes'}
+{'eureka', 'docker'}
+{'docker'}
+{'sqs'}
+{'eureka'}
+{'ansible'}
+{'sqs', 'sns'}
+{'eureka'}
+{'docker'}
+{'jhipster'}
+{'rabbitmq'}
+{'kubernetes'}
+{'docker'}
+{'kubernetes'}
+{'docker'}
+{'consul'}
+{'pact'}
+{'fabric8', 'openshift'}
+{'lagom'}
+{'zuul'}
+{'pact'}
+{'docker'}
+{'jhipster'}
+{'docker'}
+{'docker'}
+{'sqs', 'sns'}
+{'consul'}
+{'zookeeper'}
+{'consul', 'smartstack'}
+{'rabbitmq', 'docker'}
+{'eureka'}
+{'hystrix'}
+{'msf4j'}
+{'docker'}
+{'zuul'}
+{'seneca'}
+{'docker'}
+{'docker'}
+{'zookeeper'}
+{'kong'}
+{'zuul'}
+{'seneca'}
+{'lagom'}
+{'eureka'}
+{'docker'}
+{'jhipster'}
+{'jhipster'}
+{'consul'}
+{'seneca'}
+{'hystrix'}
+{'eureka', 'zuul', 'kubernetes'}
+{'docker'}
+{'eureka', 'kubernetes', 'ec2', 'consul', 'ecs'}
+{'eureka'}
+{'sqs'}
+{'eureka'}
+{'etcd'}
+{'zuul'}
+{'consul'}
+{'zuul', 'docker', 'kubernetes'}
+{'hystrix'}
+{'docker'}
+{'rabbitmq'}
+{'docker'}
+{'docker'}
+{'pact'}
+{'docker'}
+{'eureka'}
+{'jhipster'}
+{'ec2', 'docker'}
+{'kubernetes'}
+{'docker', 'kubernetes'}
+{'jhipster'}
+{'rabbitmq'}
+{'consul', 'zuul'}
+{'kong'}
+{'eureka'}
+{'eureka', 'docker'}
+{'docker'}
+{'eureka', 'zuul'}
+{'eureka'}
+{'docker'}
+{'hystrix', 'eureka'}
+{'studio'}
+{'docker'}
+{'kubernetes'}
+{'ec2'}
+{'hystrix'}
+{'eureka'}
+{'kubernetes'}
+{'falcon'}
+{'docker'}
+{'rabbitmq'}
+{'eureka'}
+{'docker'}
+{'docker'}
+{'docker', 'kubernetes'}
+{'jhipster'}
+{'docker'}
+{'rabbitmq'}
+{'istio', 'docker'}
+{'hystrix'}
+{'lagom'}
+{'consul', 'docker'}
+{'hystrix', 'ec2'}
+{'eureka'}
+{'zuul'}
+{'zuul'}
+{'hystrix'}
+{'consul', 'etcd'}
+{'ecs'}
+{'lagom'}
+{'ecs'}
+{'sqs', 'sns'}
+{'fleet'}
+{'jhipster'}
+{'kubernetes'}
+{'docker'}
+{'rabbitmq', 'docker'}
+{'docker', 'kubernetes'}
+{'zuul'}
+{'rabbitmq'}
+{'docker'}
+{'rabbitmq'}
+{'consul', 'docker'}
+{'docker', 'jhipster'}
+{'zuul'}
+{'jhipster'}
+{'kubernetes'}
+{'ecs'}
+{'zuul'}
+{'eureka'}
+{'kubernetes'}
+{'rabbitmq'}
+{'ecs', 'docker'}
+{'zuul'}
+{'docker'}
+{'consul'}
+{'lagom'}
+{'ecs', 'ec2', 'docker'}
+{'fabric8', 'openshift'}
+{'sns'}
+{'consul', 'docker'}
+{'sqs', 'sns'}
+{'microprofile'}
+{'consul', 'mesos'}
+{'docker'}
+{'ecs', 'kubernetes'}
+{'sqs'}
+{'pact'}
+{'rabbitmq'}
+{'eureka', 'zuul'}
+{'seneca'}
+{'eureka', 'zuul'}
+{'ecs'}
+{'docker'}
+{'jhipster'}
+{'jhipster'}
+{'kubernetes'}
+{'docker', 'kubernetes'}
+{'kubernetes'}
+{'kubernetes'}
+{'rabbitmq'}
+{'go-kit'}
+{'zuul'}
+{'docker'}
+{'docker'}
+{'ansible', 'docker', 'kubernetes'}
+{'ec2'}
+{'rabbitmq'}
+{'eureka', 'zuul'}
+{'jhipster'}
+{'rabbitmq'}
+{'docker'}
+{'rabbitmq', 'docker'}
+{'docker'}
+{'linkerd', 'docker'}
+{'zuul'}
+{'prometheus'}
+{'mesos'}
+{'go-kit'}
+{'ec2'}
+{'docker'}
+{'eureka'}
+{'lagom'}
+{'ec2'}
+{'docker'}
+{'eureka'}
+{'consul', 'etcd'}
+{'rabbitmq'}
+{'rabbitmq'}
+{'docker'}
+{'zuul'}
+{'docker'}
+{'kong'}
+{'docker'}
+{'kubernetes'}
+{'eureka'}
+{'rabbitmq'}
+{'kong'}
+{'eureka'}
+{'docker'}
+{'istio', 'kubernetes'}
+{'consul'}
+{'sns'}
+{'docker'}
+{'hystrix'}
+{'docker'}
+{'kubernetes'}
+{'hystrix'}
+{'docker'}
+{'docker'}
+{'lumen'}
+{'jhipster'}
+{'envoy'}
+{'eureka'}
+{'hystrix'}
+{'zuul', 'kong'}
+{'eureka', 'zuul'}
+{'zuul'}
+{'docker'}
+{'eureka', 'zookeeper'}
+{'eureka', 'docker'}
+{'ec2', 'docker'}
+{'rabbitmq'}
+{'rabbitmq'}
+{'falcor'}
+{'docker'}
+{'rabbitmq'}
+{'rabbitmq'}
+{'zookeeper'}
+{'zuul'}
+{'sqs'}
+{'docker'}
+{'zuul'}
+{'eureka'}
+{'ecs'}
+{'eventuate', 'rabbitmq'}
+{'ec2'}
+{'eureka', 'zookeeper'}
+{'rabbitmq'}
+{'zuul'}
+{'consul', 'docker'}
+{'docker'}
+{'eureka'}
+{'rabbitmq', 'docker'}
+{'consul', 'docker'}
+{'rabbitmq'}
+{'zuul'}
+{'rabbitmq', 'docker'}
+{'docker'}
+{'zuul'}
+{'pact'}
+{'rabbitmq'}
+{'finagle'}
+{'docker'}
+{'cadvisor', 'prometheus'}
+{'docker'}
+{'go-kit'}
+{'kubernetes'}
+{'docker'}
+{'rabbitmq'}
