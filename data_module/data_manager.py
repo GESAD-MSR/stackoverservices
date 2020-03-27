@@ -1,7 +1,7 @@
 import pandas as pd
-from .query_builder import QueryBuilder
+# from .query_builder import QueryBuilder
 from openpyxl import Workbook
-from google.cloud import bigquery
+# from google.cloud import bigquery
 
 
 ######################## Only eternal modules above ########################
@@ -28,14 +28,14 @@ def query_posts(query):
     --------
 
     """
-    client = bigquery.Client()
-    job = client.query(query)
+    # client = bigquery.Client()
+    # job = client.query(query)
 
-    result = job.result().to_dataframe()
-    result.set_index('Id', inplace=True)
-    result.fillna(0.0, inplace=True)
+    # result = job.result().to_dataframe()
+    # result.set_index('Id', inplace=True)
+    # result.fillna(0.0, inplace=True)
 
-    return result
+    # return result
 
 
 def get_quantile_union(df, quantile, quantile_range='upper'):

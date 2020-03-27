@@ -6,11 +6,12 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-spacy = "*"
 pandas = "*"
-pylint = "*"
+spacy = "*"
 bs4 = "*"
 dask = {extras = ["dataframe"],version = "*"}
+openpyxl = "*"
+google = {extras = ["cloud"],version = "*"}
 lxml = "*"
 
 [requires]

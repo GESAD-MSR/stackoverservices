@@ -63,10 +63,10 @@ def non_related_filter(questions_df, non_related_ids):
     """
 
     non_related = questions_df.loc[questions_df.Id.isin(non_related_ids)]
-    non_related.fillna(0.0, inplace=True)
+    non_related = non_related.fillna(0.0)
     
     related = questions_df.loc[~questions_df.Id.isin(non_related_ids)]
-    related.fillna(0.0, inplace=True)
+    related = related.fillna(0.0)
 
     return related, non_related
 
@@ -74,7 +74,7 @@ def non_related_filter(questions_df, non_related_ids):
 def no_discussions_filter(questions_df, answers_df):
     """
     
-    > Filter all questinos in wich the only the owner posted answers
+    > Filter all questions in wich the only the owner posted answers
     @return: list of questions ids which are not discussions 
 
     """
@@ -83,13 +83,13 @@ def no_discussions_filter(questions_df, answers_df):
 
     for idx, question in questions_df.iterrows():
         answers = answers_df.loc[answers_df.ParentId == question.Id]
-
+        print(idx)
         if len(answers.index) == 1:
             if answers.iloc[0].OwnerUserId == question.OwnerUserId:
                 not_dscs.append(question.Id)
     
     valid_discussions = questions_df.loc[~questions_df.Id.isin(not_dscs)]
-    valid_discussions.fillna(0.0, inplace=True)
+    valid_discussions = valid_discussions.fillna(0.0)
 
     return valid_discussions
 
