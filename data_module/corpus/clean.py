@@ -146,10 +146,9 @@ def html_extraction(text):
     return " ".join(soup.text.split())
 
 def plus_ultra (df, my_stop_words, nlp):
+    stop_words_remover = partial(remove_stopwords, my_stop_words)
 
     lemmatizator = partial(lemmatization, nlp)
-
-    stop_words_remover = partial(remove_stopwords, my_stop_words)
 
     df = list(map(remove_numeric_digits, df))
         
