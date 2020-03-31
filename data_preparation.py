@@ -35,6 +35,12 @@ my_stop_words = set(open('misc/stopword_list.txt', 'r').read().split("\n"))
 # QUESTIONS CLEANING STAGE
 print("STARTING QUESTIONS\n\n")
 
+print('Cleaning No-Discussion Questions')
+
+questions = data_filters.no_discussions_filter(questions,answers)
+
+print('Filtering Complete')
+
 # Cleaning questions title
 print("Starting Title")
 print("Cleaning data start")
@@ -51,8 +57,6 @@ print("Cleaning data start")
 # questions['Title'] = list(map(clean.remove_quotation_marks, questions['Title']))
 # print("removing stop_words")
 # questions['Title'] = list(map(stop_words_remover, questions['Title']))
-
-
 
 questions.Title = questions.Title.map_partitions(clean.plus_ultra, my_stop_words, nlp)
 
@@ -82,11 +86,3 @@ print("Answers complete")
 
 answers.to_csv('answers_results/answers.csv', index=False, single_file=True)
 print("ANSWERS FINISHED\n\n")
-
-print('Cleaning No-Discussion Questions')
-
-discussions = data_filters.no_discussions_filter(questions,answers)
-
-print('Filtering Complete')
-
-discussions.to_csv('questions_results/discussions.csv', index=False, single_file=True)
