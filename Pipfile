@@ -8,11 +8,7 @@ verify_ssl = true
 [packages]
 pandas = "*"
 spacy = "*"
-bs4 = "*"
-dask = {extras = ["dataframe"],version = "*"}
-openpyxl = "*"
-google = {extras = ["cloud"],version = "*"}
-lxml = "*"
+beautifulsoup4 = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"
