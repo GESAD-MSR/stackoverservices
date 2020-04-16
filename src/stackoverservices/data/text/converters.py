@@ -19,8 +19,7 @@ from collections import Set
 
 # External libs
 #
-import pandas as pd
-
+from pandas import DataFrame
 from spacy.lang.en import English
 from bs4 import BeautifulSoup
 
@@ -32,7 +31,7 @@ __license__ = "MIT"
 __version__ = "0.0.1"
 __maintainer__ = "Alan Bandeira"
 __email__ = "alan.p.bandeira@gmail.com"
-__status__ = "Develpment"
+__status__ = "Development"
 
 
 # =============================== CODE SECTION =============================== #
@@ -196,8 +195,8 @@ def html_extraction(text: str) -> str:
 
     return " ".join(soup.text.split())
 
-#TODO
 
+#TODO Adapt plus ultra function
 def plus_ultra (df, my_stop_words, nlp):
     stop_words_remover = partial(remove_stopwords, my_stop_words)
 
