@@ -12,17 +12,11 @@ This module presents a series of functions to filter dataframes.
 
 # Standart libs
 #
-import re
-import string
-from functools import partial
-from collections import Set
+from typing import Tuple
 
 # External libs
 #
-from pandas import DataFrame
-
-from spacy.lang.en import English
-from bs4 import BeautifulSoup
+from pandas import DataFrame, Series
 
 # Local libs
 #
@@ -38,9 +32,32 @@ __status__ = "Development"
 # =============================== CODE SECTION =============================== #
 
 
-def get_quantile_union(df, quantile, quantile_range='upper'):
+def filter_quantile_union(
+    df: DataFrame,
+    quantile: int,
+    quantile_range: str = 'upper') -> Tuple[DataFrame, Series]:
+    
     """
     Get part of the data above or below a determined quantile
+
+     Parameters
+    ----------
+    df : DataFrame
+        The dataframe from which the distribution should be estimated
+    
+    quantile : integer
+        The distribution section to be used as threshold
+
+    quantile_range : string
+        default: upper
+        The region which should be filtered, where upper indicates values
+        above the quantile and lower otherwise
+
+    Returns
+    -------
+    Two-Element Tuple
+        A tuple where the first item is the resulting filtered dataframe
+        and the second is a series with the quantile threshold value
     """
 
     if quantile == 1:
@@ -52,7 +69,7 @@ def get_quantile_union(df, quantile, quantile_range='upper'):
     else:
         print("Invalid quantile")
         return
-
+    
     if quantile_range == 'upper':
         data = df.loc[
            (df.AnswerCount > q.AnswerCount) |
@@ -70,6 +87,7 @@ def get_quantile_union(df, quantile, quantile_range='upper'):
             (df.Score < q.Score)
         ]
     else:
+        #TODO raise an error here
         print('Ivalid range of data')
         data = None
 
