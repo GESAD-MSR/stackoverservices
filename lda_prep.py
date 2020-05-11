@@ -7,6 +7,7 @@ from collections import Counter
 # Third party imports
 import pandas as pd
 import numpy as np
+import dask.dataframe as dd
 
 # Local app imports
 from data_module.corpus import operations as op
@@ -17,9 +18,9 @@ from data_module.corpus import operations as op
 
 pp = pprint.PrettyPrinter(indent=4)
 
-raw_questions = pd.read_csv('questions_test.csv')[["Id", "Title", "Body"]]
+raw_questions = pd.read_csv('./questions_results/questions.csv')[["Id", "Title", "Body"]]
 questions = raw_questions.replace(np.nan, '', regex=True)
-raw_answers = pd.read_csv('answers_test.csv')[["Id", "ParentId", "Body"]]
+raw_answers = pd.read_csv('./answers_results/answers.csv')[["Id", "ParentId", "Body"]]
 answers = raw_answers.replace(np.nan, '', regex=True)
 
 corpus = op.build_corpus(questions, answers)
@@ -35,7 +36,7 @@ prune_set = set(list(lower_prune.index) + list(upper_prune.index))
 prune_corpus = op.get_discussions_text(corpus, doc_id=True)
 prune_corpus_df = pd.DataFrame.from_dict(
     data=prune_corpus, orient='index', columns=['text'])
-print(prune_corpus_df.loc[prune_corpus_df.index == 47982972].text[47982972])
+# print(prune_corpus_df.loc[prune_corpus_df.index == 47982972].text[47982972])
 
 text = "\n\n".join(prune_corpus_df['text'])
 count = 0

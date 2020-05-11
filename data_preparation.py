@@ -8,10 +8,12 @@ import spacy
 import pandas as pd
 from bs4 import BeautifulSoup
 import dask.dataframe as dd
+import csv
 
 # Local app imports
 from data_module.corpus import clean
 from data_module import data_filters
+from data_module.corpus import data_operations
 
 # -------------------------- EXECUTION STARTS BELLOW ------------------------- #
 
@@ -33,6 +35,7 @@ my_stop_words = set(open('misc/stopword_list.txt', 'r').read().split("\n"))
 # lemmatizator = partial(clean.lemmatization, nlp)
 
 # QUESTIONS CLEANING STAGE
+
 print("STARTING QUESTIONS\n\n")
 
 print('Cleaning No-Discussion Questions')
