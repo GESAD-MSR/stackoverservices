@@ -85,7 +85,8 @@ def no_discussions_filter(questions_df, answers_df):
         answers = answers_df.loc[answers_df.ParentId == question.Id]
         print(idx)
         if len(answers.index) == 1:
-            if answers.iloc[0].OwnerUserId == question.OwnerUserId:
+            cond = answers.OwnerUserId.head(1) == question.OwnerUserId
+            if cond.bool() is True:
                 not_dscs.append(question.Id)
     
     valid_discussions = questions_df.loc[~questions_df.Id.isin(not_dscs)]
