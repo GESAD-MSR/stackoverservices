@@ -16,7 +16,8 @@ from typing import Tuple
 
 # External libs
 #
-from pandas import DataFrame, Series
+# from pandas import DataFrame, Series
+from dask.dataframe.core import DataFrame, Series
 
 # Local libs
 #
@@ -36,7 +37,6 @@ def filter_quantile_union(
     df: DataFrame,
     quantile: int,
     quantile_range: str = 'upper') -> Tuple[DataFrame, Series]:
-    
     """
     Get part of the data above or below a determined quantile
 
@@ -69,22 +69,27 @@ def filter_quantile_union(
     else:
         print("Invalid quantile")
         return
+    q = q.compute()
+    q2 = q.to_frame()
     
+    q2 = q2.transpose()
+    q2 = q2.reset_index()
+
     if quantile_range == 'upper':
         data = df.loc[
-           (df.AnswerCount > q.AnswerCount) |
-           (df.ViewCount > q.ViewCount) |
-           (df.CommentCount > q.CommentCount) |
-           (df.FavoriteCount > q.FavoriteCount) |
-           (df.Score > q.Score)
+            (df.AnswerCount > q2.AnswerCount) |
+            (df.ViewCount > q2.ViewCount) |
+            (df.CommentCount > q2.CommentCount) |
+            (df.FavoriteCount > q2.FavoriteCount) |
+            (df.Score > q2.Score)
         ]
     elif quantile_range == 'lower':
         data = df.loc[
-            (df.AnswerCount < q.AnswerCount) |
-            (df.ViewCount < q.ViewCount) |
-            (df.CommentCount < q.CommentCount) |
-            (df.FavoriteCount < q.FavoriteCount) |
-            (df.Score < q.Score)
+            (df.AnswerCount < q2.AnswerCount) |
+            (df.ViewCount < q2.ViewCount) |
+            (df.CommentCount < q2.CommentCount) |
+            (df.FavoriteCount < q2.FavoriteCount) |
+            (df.Score < q2.Score)
         ]
     else:
         #TODO raise an error here
@@ -108,22 +113,27 @@ def get_quantile_intersections(df, quantile, quantile_range='upper'):
     else:
         print("Invalid quantile")
         return
+    q = q.compute()
+    q2 = q.to_frame()
+    
+    q2 = q2.transpose()
+    q2 = q2.reset_index()
 
     if quantile_range == 'upper':
         data = df.loc[
-            (df.AnswerCount > q.AnswerCount) &
-            (df.ViewCount > q.ViewCount) &
-            (df.CommentCount > q.CommentCount) &
-            (df.FavoriteCount > q.FavoriteCount) &
-            (df.Score > q.Score)
+            (df.AnswerCount > q2.AnswerCount) &
+            (df.ViewCount > q2.ViewCount) &
+            (df.CommentCount > q2.CommentCount) &
+            (df.FavoriteCount > q2.FavoriteCount) &
+            (df.Score > q2.Score)
         ]
     elif quantile_range == 'lower':
         data = df.loc[
-            (df.AnswerCount < q.AnswerCount) &
-            (df.ViewCount < q.ViewCount) &
-            (df.CommentCount < q.CommentCount) &
-            (df.FavoriteCount < q.FavoriteCount) &
-            (df.Score < q.Score)
+            (df.AnswerCount < q2.AnswerCount) &
+            (df.ViewCount < q2.ViewCount) &
+            (df.CommentCount < q2.CommentCount) &
+            (df.FavoriteCount < q2.FavoriteCount) &
+            (df.Score < q2.Score)
         ]
     else:
         print('Ivalid range of data')
